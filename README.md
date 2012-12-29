@@ -13,4 +13,4 @@ Download and enable the [Mollom](http://drupal.org/project/mollom) and [Librarie
 ### SWFObject
 
 Download and extract the `swfobject.js` script from the latest distribution of the [SWFObject](http://code.google.com/p/swfobject/downloads/list) JavaScript library, and deploy it to a subdirectory named `swfobject` within the `libraries` directory of your Drupal installation.
-In other words, the SWFObject script must be located at `/<path-to-your>/libraries/swfobject/swfobject.js`.
+In other words, the SWFObject library must be located at `/<path-to-your>/libraries/swfobject/swfobject.js`.

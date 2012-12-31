@@ -9,7 +9,7 @@ function disable_audio_captcha_form_alter(&$form, &$form_state, $form_id) {
     // add swfplayer and this modules CSS and JS files to the page
     drupal_add_js($path . '/swfobject.js');
     $path = drupal_get_path('module', 'disable_audio_captcha');
-    drupal_add_js($path . '/js/disable_audio_captcha.js');
+    drupal_add_js($path . '/js/disable_audio_captcha.js', 'module', 'footer');
     drupal_add_css($path . '/css/disable_audio_captcha.css');
   }
 }

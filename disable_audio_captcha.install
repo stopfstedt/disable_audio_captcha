@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Implements hook_requirements().
+ * Checks if the SWF-Object script file can be found.
+ */
+function disable_audio_captcha_requirements() {
+  $requirements = array();
+  $t = get_t();
+
+  $requirements['disable_audio_captcha']['title'] = $t('Disable Audio Captcha');
+
+  $file_name = 'swfobject.js';
+  $path = libraries_get_path('swfobject');
+  $file_path = $path . '/' . $file_name;
+
+  if (file_exists($file_path)) {
+    $requirements['disable_audio_captcha']['value'] = $t('SWFObject script found in @path.', array(
+      '@path' => $file_path));
+    $requirements['disable_audio_captcha']['severity'] = REQUIREMENT_OK;
+  } else {
+    $requirements['disable_audio_captcha']['value'] = $t('SWFObject script not found.');
+    $requirements['disable_audio_captcha']['severity'] = REQUIREMENT_ERROR;
+    $requirements['disable_audio_captcha']['description'] = $t('Please download the latest SWFObject distribution zip-file from @url and extract it. Then copy the extracted @file to  @path.', array(
+      '@url' => 'https://code.google.com/p/swfobject/downloads/list',
+      '@file' => $file_name,
+      '@path' => $file_path
+    ));
+  }
+  return $requirements;
+}

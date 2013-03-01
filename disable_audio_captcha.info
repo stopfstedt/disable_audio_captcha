@@ -1,7 +1,7 @@
 name = Disable Audio Captcha
 description = Detects flash-capabilities of the user-agent and disables the Mollom audio captcha link if flash is not available.
 core = 6.x
-version = 6.x-1.1
+version = 6.x-1.2
 php = 5.2.4
 
 dependencies[] = mollom
